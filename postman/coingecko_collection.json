@@ -1,0 +1,159 @@
+{
+  "info": {
+    "name": "CoinGecko Realtime Demo",
+    "_postman_id": "cgecko-demo-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "api_key",
+      "value": "{{COINGECKO_API_KEY}}"
+    }
+  ],
+  "item": [
+    {
+      "name": "Top Markets (Top 10)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-cg-demo-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=1h,24h,7d",
+          "protocol": "https",
+          "host": [
+            "api",
+            "coingecko",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "coins",
+            "markets"
+          ],
+          "query": [
+            {
+              "key": "vs_currency",
+              "value": "usd"
+            },
+            {
+              "key": "order",
+              "value": "market_cap_desc"
+            },
+            {
+              "key": "per_page",
+              "value": "10"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "sparkline",
+              "value": "false"
+            },
+            {
+              "key": "price_change_percentage",
+              "value": "1h,24h,7d"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Simple Price (BTC+ETH)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-cg-demo-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true",
+          "protocol": "https",
+          "host": [
+            "api",
+            "coingecko",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "simple",
+            "price"
+          ],
+          "query": [
+            {
+              "key": "ids",
+              "value": "bitcoin,ethereum"
+            },
+            {
+              "key": "vs_currencies",
+              "value": "usd"
+            },
+            {
+              "key": "include_market_cap",
+              "value": "true"
+            },
+            {
+              "key": "include_24hr_vol",
+              "value": "true"
+            },
+            {
+              "key": "include_24hr_change",
+              "value": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Historical Market Chart (BTC 30d)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-cg-demo-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "url": {
+          "raw": "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily",
+          "protocol": "https",
+          "host": [
+            "api",
+            "coingecko",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "coins",
+            "bitcoin",
+            "market_chart"
+          ],
+          "query": [
+            {
+              "key": "vs_currency",
+              "value": "usd"
+            },
+            {
+              "key": "days",
+              "value": "30"
+            },
+            {
+              "key": "interval",
+              "value": "daily"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
